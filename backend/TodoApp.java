@@ -13,27 +13,27 @@ public class TodoApp {
 
         while(running) {
             System.out.println("\n--- TO-DO LIST ---");
-            System.out.println("1. Dodaj zadatak");
-            System.out.println("2. Prikazi sve zadatke");
-            System.out.println("3. Obrisi zadatak");
-            System.out.println("4. Izlaz");
-            System.out.println("Izaberi opciju:");
+            System.out.println("1. Add task");
+            System.out.println("2. List all tasks");
+            System.out.println("3. Delete task");
+            System.out.println("4. Exit");
+            System.out.println("Chose the option:");
 
             int choice = scanner.nextInt();
             scanner.nextLine();     //ocisti novi red
 
             switch(choice) {
                 case 1:
-                    System.out.println("Unesi zadatak: ");
+                    System.out.println("Write a task: ");
                     String task = scanner.nextLine();
                     tasks.add(task);
-                    System.out.println("Zadatak dodat!");
+                    System.out.println("Task has been added!");
                     break;
 
                 case 2:
-                    System.out.println("\n--- SVI ZADACI ---");
+                    System.out.println("\n--- ALL TASKS ---");
                     if(tasks.isEmpty()) {
-                        System.out.println("Nema zadataka.");
+                        System.out.println("These are no tasks...");
                     } else {
                         for(int i = 0; i < tasks.size(); i++) {
                             System.out.println((i + 1) + ". " + tasks.get(i));
@@ -42,23 +42,23 @@ public class TodoApp {
                     break;
 
                 case 3:
-                    System.out.println("Unesi broj zadatka za brisanje: ");
+                    System.out.println("Enter the task number to delete: ");
                     int index = scanner.nextInt() - 1;
 
                     if(index >= 0 && index < tasks.size()) {
-                        System.out.println("Zadatak '" + tasks.get(index) + "' obrisan!");
+                        System.out.println("Task '" + tasks.get(index) + "' has been deleted!");
                         tasks.remove(index);
                     } else {
-                        System.out.println("Pogresan broj zadatka.");
+                        System.out.println("Wrong number of the task.");
                     }
                     break;
 
                 case 4:
                     running = false;
-                    System.out.println("Dovidjenja!");
+                    System.out.println("Bye bye!");
                     break;
                 default:
-                    System.out.println("Nepoznata opcija, pokusaj ponovo.");
+                    System.out.println("Unknown option, try again.");
             }
         }
         scanner.close();
