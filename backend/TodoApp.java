@@ -1,4 +1,6 @@
-#import java.util.ArrayList;
+package backend;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TodoApp {
@@ -62,3 +64,16 @@ public class TodoApp {
         scanner.close();
     }
 }
+
+
+/*Da bi browser(frontend) mogao da "prica" sa backendom, potrebno je da backend:
+ * 1. radi kao web server
+ * 2. ima API rute(kao "puteve" na koje frontend moze da salje zahtjeve - npr. /add, /list, /delete)
+ * 
+ * Znaci, umjesto Scanner u konzoli, moj backend treba da:
+ * koristi Spark Java(ili Spring Boot, ali Spart je laksi...),
+ * napravim male "rute" kao /add, /tasks, /delete
+ * 
+ * Frontend ce: slati poruke na te rute(npr. fetch() u js) i prikazivati rezultate korisniku
+ * 
+ */
