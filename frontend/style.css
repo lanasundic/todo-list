@@ -41,7 +41,6 @@ button {
   background-color: #66a6ff;
   color: white;
   border-radius: 8px;
-  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -53,4 +52,6 @@ ul {
     list-style: none;
     padding: 0;
 }
+
+
 
